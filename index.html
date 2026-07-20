@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  
+
   <!-- SEO Meta Tags -->
   <title>Anass Mahmoudi - Expert Full Stack Developer | Laravel, Flutter, Mobile Apps Morocco</title>
   <meta name="description" content="Professional Full Stack Developer in Morocco specializing in Laravel web development, Flutter mobile apps, WordPress solutions, and Android development. Available for freelance and remote work worldwide." />
@@ -12,14 +12,14 @@
   <meta name="author" content="Anass Mahmoudi" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://anassmahmoudi.dev/" />
-  
+
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://anassmahmoudi.dev/" />
   <meta property="og:title" content="Anass Mahmoudi - Expert Full Stack Developer | Laravel, Flutter, Mobile Apps Morocco" />
   <meta property="og:description" content="Professional Full Stack Developer in Morocco specializing in Laravel, Flutter, WordPress, and Android development. Available for freelance and remote work." />
   <meta property="og:image" content="https://anassmahmoudi.dev/images/anass-portfolio-cover.jpg" />
-  
+
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:url" content="https://anassmahmoudi.dev/" />
@@ -27,7 +27,7 @@
   <meta name="twitter:description" content="Professional Full Stack Developer in Morocco specializing in Laravel, Flutter, WordPress, and Android development." />
   <meta name="twitter:image" content="https://anassmahmoudi.dev/images/anass-portfolio-cover.jpg" />
   <meta name="twitter:creator" content="@AnassMahmoudi_" />
-  
+
   <!-- Structured Data -->
   <script type="application/ld+json">
   {
@@ -53,7 +53,7 @@
     "email": "hello@anassmahmoudi.dev",
     "knowsAbout": [
       "Laravel Development",
-      "Flutter Development", 
+      "Flutter Development",
       "Mobile App Development",
       "WordPress Development",
       "Android Development",
@@ -63,18 +63,27 @@
     "description": "Professional Full Stack Developer specializing in Laravel, Flutter, WordPress, and Android development. Available for freelance web development and mobile app projects worldwide."
   }
   </script>
-  
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
+  <div class="bg-orbs" aria-hidden="true">
+    <span class="orb orb-1"></span>
+    <span class="orb orb-2"></span>
+    <span class="orb orb-3"></span>
+  </div>
+
   <header>
     <div class="nav">
       <a class="brand" href="index.html#hero" aria-label="Anass Mahmoudi">
         <img src="/assets/logowhite.png" alt="photo">
         <div class="name">Anass Mahmoudi</div>
       </a>
-      <nav aria-label="Primary">
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav aria-label="Primary" id="primaryNav">
         <ul>
           <li><a href="index.html#hero">Home</a></li>
           <li><a href="index.html#projects">Projects</a></li>
@@ -87,86 +96,149 @@
 
   <main>
     <section id="hero" class="hero">
-      <div class="hero-card">
-        <h1>Hi, I'm Anass Mahmoudi</h1>
-        <h2>Expert Full-Stack Developer & Mobile App Specialist</h2>
-        <p>Professional Full Stack Developer in Morocco specializing in Laravel web development, Flutter mobile apps, WordPress solutions, and Native Android development. I create high-performance web applications and cross-platform mobile apps with clean architecture, exceptional UX, and optimized performance.</p>
-        <div class="hero-ctas">
-          <a class="btn btn-primary" href="mailto:hello@anassmahmoudi.dev"><i class="fas fa-paper-plane"></i> Hire Developer</a>
+      <div class="hero-card" id="heroCard">
+        <span class="hero-badge reveal"><span class="dot-pulse"></span> Available for freelance & remote work</span>
+        <h1 class="reveal" style="transition-delay:.05s">Hi, I'm <span class="gradient-text">Anass Mahmoudi</span></h1>
+        <h2 class="reveal" style="transition-delay:.1s">Expert Full-Stack Developer & Mobile App Specialist</h2>
+        <p class="reveal" style="transition-delay:.15s">Professional Full Stack Developer in Morocco specializing in Laravel web development, Flutter mobile apps, WordPress solutions, and Native Android development. I create high-performance web applications and cross-platform mobile apps with clean architecture, exceptional UX, and optimized performance.</p>
+        <div class="hero-ctas reveal" style="transition-delay:.2s">
+          <a class="btn btn-primary btn-call" href="mailto:hello@anassmahmoudi.dev?subject=Let's%20talk%20about%20my%20project&body=Hi%20Anass%2C%0A%0AI'd%20like%20to%20book%20a%20call%20to%20discuss%20a%20project.%0A%0AName%3A%0ABudget%3A%0AProject%20details%3A"><i class="fas fa-phone-volume"></i> Book a Call</a>
           <a class="btn btn-ghost" href="index.html#projects"><i class="fas fa-briefcase"></i> View Portfolio</a>
           <a class="btn btn-ghost" href="blogs.html"><i class="fas fa-blog"></i> Development Blog</a>
         </div>
-        <div style="margin-top:20px; color:var(--muted); font-size:0.95rem">
-          <strong>Location:</strong> Morocco &nbsp; • &nbsp; <strong>Available for freelance web development & remote mobile app projects worldwide</strong>
+        <div class="hero-stats reveal" style="transition-delay:.25s">
+          <div class="stat"><span class="stat-num" data-count="4">0</span><span class="stat-label">Shipped Products</span></div>
+          <div class="stat"><span class="stat-num" data-count="3">0</span><span class="stat-label">Live Play Store Apps</span></div>
+          <div class="stat"><span class="stat-num" data-count="10" data-suffix="K+">0</span><span class="stat-label">Monthly Readers</span></div>
+          <div class="stat"><span class="stat-num" data-count="100" data-suffix="%">0</span><span class="stat-label">Client-Focused</span></div>
+        </div>
+        <div class="hero-location reveal" style="transition-delay:.3s">
+          <strong><i class="fas fa-location-dot"></i> Morocco</strong> &nbsp;•&nbsp; <strong>Available for freelance web development &amp; remote mobile app projects worldwide</strong>
         </div>
       </div>
-      <div class="hero-photo" aria-hidden="true">
-        <img class="profile-photo" src="/assets/12596370_967532649962927_29807497_n_967532649962927.jpg" alt="Anass Mahmoudi">
+      <div class="hero-photo reveal" aria-hidden="true">
+        <div class="photo-ring">
+          <img class="profile-photo" src="/assets/12596370_967532649962927_29807497_n_967532649962927.jpg" alt="Anass Mahmoudi">
+          <span class="available-badge"><span class="dot-pulse"></span> Available now</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="stack-strip">
+      <div class="container">
+        <p class="stack-label reveal">Core Toolkit</p>
+        <div class="stack-row reveal">
+          <span class="stack-chip"><i class="fab fa-laravel"></i> Laravel</span>
+          <span class="stack-chip"><i class="fas fa-mobile-screen-button"></i> Flutter</span>
+          <span class="stack-chip"><i class="fab fa-wordpress"></i> WordPress</span>
+          <span class="stack-chip"><i class="fab fa-android"></i> Android / Kotlin</span>
+          <span class="stack-chip"><i class="fas fa-robot"></i> AI Integration</span>
+          <span class="stack-chip"><i class="fas fa-magnifying-glass-chart"></i> SEO</span>
+        </div>
       </div>
     </section>
 
     <section id="projects" class="container">
-      <h2 class="section-title">Featured Development Projects & Portfolio</h2>
-      <p style="text-align:center; color:var(--muted); margin-bottom:30px;">Showcasing professional Laravel web applications, Flutter mobile apps, WordPress solutions, and Android applications built for clients worldwide.</p>
+      <h2 class="section-title reveal">Featured Development Projects &amp; Portfolio</h2>
+      <p class="section-sub reveal">Real, published products — a high-traffic Arabic content platform and three live Android apps on Google Play, built end-to-end with clean architecture and polished UX.</p>
       <div class="projects-grid" id="projectsGrid">
-        <!-- Project cards (data-project contains JSON) -->
-        <article class="project-card" tabindex="0" role="button" data-project='{
-          "title":"Intelligent Nutritional Assistant",
-          "tech":"Flutter • Laravel • OpenAI",
-          "desc":"AI-powered nutrition app that analyzes foods and returns macros, GL, GI, potassium and sodium. Includes premium features and a Laravel REST API.",
-          "image":"images/nutri-placeholder.jpg",
-          "tags":["Flutter","Laravel","AI","Nutrition"],
-          "live":"#",
-          "repo":"#"
+
+        <article class="project-card" tabindex="0" role="button" style="--card-accent:#4ade80" data-project='{
+          "title":"ArabKeto — Arabic Keto Platform",
+          "tech":"Content Platform • SEO • Custom Calculators",
+          "desc":"The leading Arabic-language destination for the ketogenic diet: in-depth science-backed guides, an SEO-first architecture, and free interactive tools (macro, carb & calorie calculators). Publishes weekly and reaches 10K+ monthly readers with a fast, mobile-first, fully Arabic (RTL) experience.",
+          "tags":["SEO","Content Platform","Arabic / RTL","Web Performance"],
+          "icon":"fa-solid fa-drumstick-bite",
+          "live":"https://arabketo.com"
         }'>
-          <div class="project-meta">Flutter • Laravel • AI</div>
-          <h3>Intelligent Nutritional Assistant</h3>
-          <p class="project-short" style="color:var(--muted)">Analyzes foods using a custom Laravel API and returns macros, GL/GI and mineral data — integrated with a modern Flutter client.</p>
-          <div style="margin-top:12px" class="tags">
-            <span class="tag">Flutter</span><span class="tag">Laravel</span><span class="tag">AI</span>
+          <div class="card-logo" style="background:linear-gradient(145deg,#4ade80,#16a34a)"><i class="fa-solid fa-drumstick-bite"></i></div>
+          <div class="project-meta">Content Platform • SEO • Arabic</div>
+          <h3>ArabKeto — Arabic Keto Platform</h3>
+          <p class="project-short">The #1 Arabic resource for the keto diet — science-backed guides, recipes and free calculators reaching 10K+ readers a month.</p>
+          <div class="tags">
+            <span class="tag">SEO</span><span class="tag">RTL / Arabic</span><span class="tag">Web Performance</span>
           </div>
+          <div class="card-footer"><span class="card-link">arabketo.com <i class="fas fa-arrow-up-right-from-square"></i></span></div>
         </article>
 
-        <article class="project-card" tabindex="0" role="button" data-project='{"title":"Note-Taking App","tech":"Android (Kotlin)","desc":"Local-first Android notes app with Room, search, categories and a polished UX.","image":"images/notes-placeholder.jpg","tags":["Kotlin","Android","Room"],"live":"#","repo":"#"}'>
-          <div class="project-meta">Android • Kotlin • Room</div>
-          <h3>Note-Taking Application</h3>
-          <p class="project-short" style="color:var(--muted)">Fast local notes app with search and well-structured data models — built for reliability and speed.</p>
-          <div style="margin-top:12px" class="tags"><span class="tag">Kotlin</span><span class="tag">Room</span></div>
+        <article class="project-card" tabindex="0" role="button" style="--card-accent:#ff8a3d" data-project='{
+          "title":"NutriGL Insight",
+          "tech":"Android • AI Food Scanner • Health Tech",
+          "desc":"AI-powered glycemic load & nutrition tracker for Android. Snap a photo, scan a barcode, or type a meal to instantly get calories, macros, fiber and a clear Low / Medium / High glycemic load score — plus smart low-GL swaps and weekly trend insights to stop energy crashes and blood-sugar spikes.",
+          "tags":["AI","Android","Health Tech","Glycemic Load"],
+          "logo":"/assets/nutrigl-logo.png",
+          "live":"https://play.google.com/store/apps/details?id=com.oushen.NutriGLInsight"
+        }'>
+          <div class="card-logo has-img" style="background:linear-gradient(145deg,#ff9d45,#ff6b00)"><img src="/assets/nutrigl-logo.png" alt="NutriGL Insight logo"></div>
+          <div class="project-meta">Android • AI • Health Tech</div>
+          <h3>NutriGL Insight</h3>
+          <p class="project-short">AI food scanner that reveals the real glycemic impact of every meal — not just calories. Live on Google Play.</p>
+          <div class="tags">
+            <span class="tag">AI</span><span class="tag">Android</span><span class="tag">Glycemic Load</span>
+          </div>
+          <div class="card-footer"><span class="card-link">Google Play <i class="fas fa-arrow-up-right-from-square"></i></span></div>
         </article>
 
-        <article class="project-card" tabindex="0" role="button" data-project='{"title":"Real-Time Chat Application","tech":"Laravel • Vue • WebSocket","desc":"A real-time chat system built during an internship using Laravel Echo and WebSockets.","image":"images/chat-placeholder.jpg","tags":["Laravel","Vue","WebSocket"],"live":"#","repo":"#"}'>
-          <div class="project-meta">Laravel • Vue • WebSocket</div>
-          <h3>Real-Time Chat Application</h3>
-          <p class="project-short" style="color:var(--muted)">Built a production-ready chat with presence and real-time updates — used in internal communication systems.</p>
-          <div style="margin-top:12px" class="tags"><span class="tag">WebSocket</span><span class="tag">Realtime</span></div>
+        <article class="project-card" tabindex="0" role="button" style="--card-accent:#2dd4cf" data-project='{
+          "title":"RhythmDo — Timebox Tasks",
+          "tech":"Android • Pomodoro • Productivity",
+          "desc":"Smart Pomodoro timeboxing app that turns to-do lists into focused, rewarding sessions. Features a glowing focus timer, intelligent task prioritization (Finisher, Deep Worker & Consistency Builder modes), Rescue Mode for drifting focus, and gamified streaks with confetti rewards.",
+          "tags":["Productivity","Android","Gamification","Focus Timer"],
+          "logo":"/assets/rhythmdo-logo.png",
+          "live":"https://play.google.com/store/apps/details?id=com.oushen.rhythmdo"
+        }'>
+          <div class="card-logo has-img" style="background:linear-gradient(145deg,#5eead4,#0d9488)"><img src="/assets/rhythmdo-logo.png" alt="RhythmDo logo"></div>
+          <div class="project-meta">Android • Productivity • Gamification</div>
+          <h3>RhythmDo — Timebox Tasks</h3>
+          <p class="project-short">A Pomodoro timeboxing app with smart prioritization and gamified streaks that make focus feel rewarding.</p>
+          <div class="tags">
+            <span class="tag">Productivity</span><span class="tag">Android</span><span class="tag">Gamification</span>
+          </div>
+          <div class="card-footer"><span class="card-link">Google Play <i class="fas fa-arrow-up-right-from-square"></i></span></div>
         </article>
 
-        <article class="project-card" tabindex="0" role="button" data-project='{"title":"Personal Keto Blog","tech":"WordPress • SEO","desc":"An Arabic WordPress blog focused on the ketogenic diet. Custom theme and SEO.","image":"images/keto-placeholder.jpg","tags":["WordPress","SEO","PHP"],"live":"#","repo":"#"}'>
-          <div class="project-meta">WordPress • PHP</div>
-          <h3>Personal Keto Blog</h3>
-          <p class="project-short" style="color:var(--muted)">Custom WordPress site with SEO-first content and responsive theme design for readers in Arabic.</p>
-          <div style="margin-top:12px" class="tags"><span class="tag">WordPress</span><span class="tag">SEO</span></div>
+        <article class="project-card" tabindex="0" role="button" style="--card-accent:#22c55e" data-project='{
+          "title":"EcoHabit Tracker",
+          "tech":"Android • Sustainability • Gamification",
+          "desc":"A gamified carbon-footprint tracker built for Gen Z. Logs daily choices and visualizes real-world impact (trees saved, car miles avoided) using IPCC, UK DEFRA & EPA emission data — with streaks, XP levels, badges and social challenges that make sustainability feel like a game, not a chore.",
+          "tags":["Sustainability","Android","Gamification","Data Viz"],
+          "icon":"fa-solid fa-leaf",
+          "live":"https://play.google.com/store/apps/details?id=com.oushen.ecohabit_tracker"
+        }'>
+          <div class="card-logo" style="background:linear-gradient(145deg,#4ade80,#059669)"><i class="fa-solid fa-leaf"></i></div>
+          <div class="project-meta">Android • Sustainability • Data</div>
+          <h3>EcoHabit Tracker</h3>
+          <p class="project-short">Gamified carbon-footprint tracker that turns eco-friendly habits into streaks, levels and real impact stats.</p>
+          <div class="tags">
+            <span class="tag">Sustainability</span><span class="tag">Android</span><span class="tag">Gamification</span>
+          </div>
+          <div class="card-footer"><span class="card-link">Google Play <i class="fas fa-arrow-up-right-from-square"></i></span></div>
         </article>
 
       </div>
     </section>
 
     <section id="contact" class="container">
-      <h2 class="section-title">Contact Full Stack Developer</h2>
-      <div class="contact-center">
-        <p class="contact-line">Ready to start your next Laravel web development or Flutter mobile app project? Get in touch for professional development services, freelance work, or remote collaboration opportunities.</p>
+      <div class="contact-panel reveal">
+        <span class="contact-eyebrow"><i class="fas fa-comments"></i> Let's work together</span>
+        <h2 class="section-title" style="margin-bottom:14px">Ready to Start Your Next Project?</h2>
+        <p class="contact-line">Whether it's a Laravel web platform, a Flutter or Android mobile app, or an AI-powered product — book a free call and let's talk about how I can help you build it.</p>
+        <div class="contact-ctas">
+          <a class="btn btn-primary btn-call btn-lg" href="mailto:hello@anassmahmoudi.dev?subject=Let's%20talk%20about%20my%20project&body=Hi%20Anass%2C%0A%0AI'd%20like%20to%20book%20a%20call%20to%20discuss%20a%20project.%0A%0AName%3A%0ABudget%3A%0AProject%20details%3A"><i class="fas fa-phone-volume"></i> Book a Free Call</a>
+          <a class="btn btn-ghost btn-lg" href="mailto:hello@anassmahmoudi.dev"><i class="fas fa-envelope"></i> Send an Email</a>
+        </div>
         <div class="socials" role="navigation" aria-label="contact links">
           <a href="mailto:hello@anassmahmoudi.dev" title="Email"><i class="fas fa-envelope"></i></a>
-          <a href="https://www.linkedin.com/in/anass-mahmoudi" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-          <a href="https://github.com/MahmoudiAnass" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-          <a href="https://x.com/AnassMahmoudi_" target="_blank" title="X"><span style="color: #ff7300; font-size: 2rem; font-weight: bold;">𝕏</span></a>
+          <a href="https://www.linkedin.com/in/anass-mahmoudi" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/MahmoudiAnass" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://x.com/AnassMahmoudi_" target="_blank" rel="noopener" title="X"><i class="fa-brands fa-x-twitter"></i></a>
         </div>
       </div>
     </section>
 
-    <footer style="padding:26px 20px; text-align:center; color:var(--muted)">
-      <p>&copy; 2025 Anass Mahmoudi — Professional Full Stack Developer | Laravel • Flutter • WordPress • Android Development</p>
-      <p style="font-size:0.85rem; margin-top:8px; color:var(--muted)">Available for freelance web development and mobile app development projects worldwide</p>
+    <footer>
+      <p>&copy; 2026 Anass Mahmoudi — Professional Full Stack Developer | Laravel • Flutter • WordPress • Android Development</p>
+      <p class="footer-sub">Available for freelance web development and mobile app development projects worldwide</p>
     </footer>
   </main>
 
@@ -175,7 +247,7 @@
     <div class="modal" id="modal" role="document" aria-labelledby="modalTitle">
       <div style="display:flex; justify-content:space-between; align-items:center;">
         <div style="display:flex; gap:12px; align-items:center;">
-          <i class="fas fa-folder-open" style="color:var(--accent); font-size:1.3rem"></i>
+          <div class="modal-logo" id="modalLogo"><i class="fas fa-folder-open"></i></div>
           <h3 id="modalTitle" style="margin:0;color:var(--accent)">Project</h3>
         </div>
         <div class="close" id="modalClose" title="Close"><i class="fas fa-times"></i></div>
@@ -186,12 +258,8 @@
           <p id="modalDesc" style="margin-top:8px; color:var(--muted)"></p>
           <div class="meta" id="modalTags"></div>
           <div style="margin-top:18px">
-            <a id="modalLive" class="btn btn-primary" href="#" target="_blank" style="display:inline-block"><i class="fas fa-external-link-alt"></i> View / Demo</a>
-            <a id="modalRepo" class="btn btn-ghost" href="#" target="_blank" style="margin-left:10px"><i class="fab fa-github"></i> Source</a>
+            <a id="modalLive" class="btn btn-primary" href="#" target="_blank" rel="noopener" style="display:inline-block"><i class="fas fa-external-link-alt"></i> Visit Live</a>
           </div>
-        </div>
-        <div>
-          <img id="modalImage" class="screenshot" src="" alt="Project screenshot">
         </div>
       </div>
     </div>
