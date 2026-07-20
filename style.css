@@ -152,43 +152,21 @@ nav a.nav-cta:hover{ border-color: var(--text-2); }
 .hero{
   padding-top: clamp(90px, 14vh, 160px);
   padding-bottom: clamp(80px, 12vh, 140px);
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(220px, 300px);
-  gap: clamp(40px, 6vw, 90px);
-  align-items: start;
+  max-width: 940px;
 }
-.hero-text{ min-width: 0; max-width: 720px; }
 
-.hero-portrait{
-  position: sticky;
-  top: calc(72px + 40px);
-  margin: 0;
-}
-.hero-portrait figure{
-  margin: 0;
+.hero-avatar{
   display: block;
-}
-.hero-portrait img{
-  display: block;
-  width: 100%;
-  aspect-ratio: 4 / 5;
+  width: 68px;
+  height: 68px;
+  border-radius: 999px;
   object-fit: cover;
-  border-radius: 4px;
   border: 1px solid var(--line-2);
   filter: grayscale(100%) contrast(1.02);
-  transition: filter .8s var(--ease);
+  transition: filter .6s var(--ease);
+  margin-bottom: 28px;
 }
-.hero-portrait:hover img{ filter: grayscale(0%) contrast(1); }
-.hero-portrait figcaption{
-  display: flex; flex-direction: column;
-  padding-top: 14px;
-  font-size: 12px;
-  color: var(--muted);
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-}
-.portrait-name{ color: var(--text-2); font-weight: 500; }
-.portrait-role{ margin-top: 4px; }
+.hero-avatar:hover{ filter: grayscale(0%) contrast(1); }
 
 .hero-status{
   display: inline-flex; align-items: center; gap: 10px;
@@ -580,24 +558,8 @@ nav a.nav-cta:hover{ border-color: var(--text-2); }
 ::selection{ background: var(--accent); color: var(--accent-ink); }
 
 /* ---------- responsive ---------- */
-@media (max-width: 880px){
-  .hero{
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-  .hero-portrait{
-    position: static;
-    order: -1;
-    justify-self: start;
-    width: 96px;
-  }
-  .hero-portrait img{
-    aspect-ratio: 1 / 1;
-    border-radius: 999px;
-  }
-  .hero-portrait figcaption{ display: none; }
-}
 @media (max-width: 860px){
+  .hero-avatar{ width: 56px; height: 56px; margin-bottom: 22px; }
   .about-grid{ grid-template-columns: 1fr; gap: 40px; }
   .about-stack > div{ grid-template-columns: 96px 1fr; }
   .work-link{ grid-template-columns: 40px 1fr 24px; gap: 18px; padding: 26px 4px; }
