@@ -1,0 +1,202 @@
+✅ Version 1: Core & Clean (MVP – Minimum Viable Product)
+🎯 Goal: Let people read Qur’an and access Adhkar offline, beautifully.
+🔧 Features:
+📖 Qur’an reader:
+
+Arabic + optionally translation
+
+Scroll surahs, simple clean UI
+
+Local SQLite for ayahs
+
+🤲 Adhkar section:
+
+Morning / evening / sleep / prayer
+
+Organized by category
+
+Can use local JSON or SQLite
+
+🏠 Home Tab:
+
+Welcome message (du'a, hadith)
+
+Daily verse or dhikr
+
+💰 Payment:
+No payment yet
+
+Only show a small note:
+“This app is free. Later versions will include optional support and donations, insha’Allah.”
+
+🚀 Version 2: Motivation Layer
+🎯 Goal: Make the experience fun and spiritual, without counting hasanat.
+✨ New Features:
+🧩 Challenges tab:
+
+“Read 1 page today” ✔️
+
+“Read 3 dhikr from morning set” ✔️
+
+Show checkmarks or completion bar
+
+📆 Daily streak system:
+
+Show a “7-day streak” (optional local storage)
+
+🎁 Simple badges:
+
+“7-day reader”, “Daily dhikr hero” (not too gamified, keep it minimal)
+
+🔒 Payment:
+Add subscription screen: $0.99/month
+
+Add “I can’t afford it” button (unlocks everything)
+
+Message on screen:
+“This helps support the app. If you can’t afford it, you’re still welcome here — it's between you and Allah.”
+
+🎤 Version 3: Memorization Mode (Your Unique Feature)
+🎯 Goal: Introduce mic-based recitation with feedback.
+🧠 New Features:
+🎙️ Recite mode:
+
+User selects surah
+
+Mic listens to each ayah
+
+Beep if not correct (basic matching via Google Speech-to-Text)
+
+🧘 Repeat and retry
+
+✅ Simple progress tracker: shows surahs they’ve practiced
+
+Technical Note:
+You can start with simple exact match of words (no need for tajweed grading at this stage). Use SpeechRecognizer in Android, compare text, and add small tolerance.
+
+🤲 Version 4: Donation/Sponsorship + UI Polish
+🎯 Goal: Let users support others easily.
+❤️ New Features:
+“Buy & sponsor 1 free user” option
+
+“This free access was gifted by someone” message
+
+Track sponsor_count & free_unlocks_used
+
+Add themes or visual unlocks (optional)
+
+Refine UI animations, feedback
+
+🔮 Later Versions (Optional Future Ideas)
+📱 Full tajweed color display
+
+📊 Memorization analytics
+
+🧑‍🤝‍🧑 Friend invite system with sponsor code
+
+🌐 Multi-language support (French, Urdu, etc.)
+
+📅 Custom dhikr reminders
+
+🕌 Local prayer time integration
+
+
+---------------------------------------------------
+
+
+
+
+🎨 1. Style Guide
+✅ Colors:
+Use	Color	Hex
+Primary	Emerald Green	#10B981
+Accent	Gold	#FBBF24
+Text	Dark Slate	#1F2937
+Background	Off-white	#F9FAFB
+Surface (cards)	White	#FFFFFF
+Border/Line	Light Gray	#E5E7EB
+
+✅ Fonts:
+Headings: Poppins Bold
+
+Body Text: Poppins Regular
+
+Arabic Text: Amiri / Scheherazade / Noto Naskh Arabic
+
+📐 2. Grid & Spacing
+Mobile base width: 360px
+
+Grid: 8px spacing system
+
+Padding: 16px standard
+
+Card radius: 12px
+
+Shadows: 0px 2px 8px rgba(0,0,0,0.05)
+
+📲 3. Screens
+🏠 Home Screen
+Element	Description
+Welcome Message	"Assalamu Alaikum, [Name]"
+Daily Verse Card	Card showing one verse + translation
+Daily Dhikr Card	Card: “SubhanAllah – Repeat x33”
+Bottom Nav	Home
+
+📖 Qur'an Reader Screen
+Element	Description
+Top Nav	Surah Selector dropdown
+Ayah Cards	Each ayah in Arabic + optional translation
+Settings	Toggle: Show/hide translation
+Scroll Behavior	Continuous scroll (not page-based)
+
+🤲 Adhkar Screen
+| Tabs | Morning | Evening | Prayer | Sleep |
+| Card Style | Title + Arabic dhikr + transliteration + translation |
+| Icons | Use subtle icons per category |
+| Bookmark | Option to mark favorite adhkar |
+
+🧾 Settings Modal
+Toggle Dark Mode
+
+Toggle Translation
+
+Choose Font Size (S / M / L)
+
+Language: Arabic / English
+
+🔲 Bottom Navigation (Fixed)
+Icon	Label
+🏠	Home
+📖	Qur'an
+🤲	Adhkar
+⚙️	Settings
+
+🎨 4. Components
+✅ Card Component
+Rounded
+
+Shadow
+
+Title
+
+Body (Arabic + translation)
+
+Optional checkmark or interaction icon
+
+✅ Tab Bar Component
+Top tabs (adhkar categories)
+
+Underline indicator for active tab
+
+✅ Bottom Navigation
+Active tab highlighted in emerald
+
+Icons: use Feather / Material icons
+
+📦 5. Assets to Prepare
+App icon (minimal, calligraphy-based)
+
+Logo (wordmark or Arabic + English)
+
+Background subtle Islamic pattern (SVG)
+

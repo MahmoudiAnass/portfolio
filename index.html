@@ -50,6 +50,8 @@
   }
   </script>
 
+  <link rel="icon" type="image/png" href="/assets/logowhite.png">
+  <link rel="apple-touch-icon" href="/assets/logowhite.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
@@ -59,7 +61,7 @@
   <header>
     <div class="nav container">
       <a class="brand" href="index.html#top" aria-label="Anass Mahmoudi">
-        <span class="brand-mark">AM</span>
+        <img class="brand-mark" src="/assets/logowhite.png" alt="">
         <span class="brand-name">Anass Mahmoudi</span>
       </a>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
@@ -78,26 +80,37 @@
 
   <main id="top">
     <section class="hero container">
-      <div class="hero-status reveal">
-        <span class="status-dot"></span>
-        <span>Available for new projects &middot; 2026</span>
+      <div class="hero-text">
+        <div class="hero-status reveal">
+          <span class="status-dot"></span>
+          <span>Available for new projects &middot; 2026</span>
+        </div>
+        <h1 class="hero-title reveal">
+          Full-stack developer<br>
+          building <em>quiet, thoughtful</em><br>
+          digital products.
+        </h1>
+        <p class="hero-lede reveal">
+          I'm Anass — a developer based in Morocco. I design and ship Laravel web platforms and Flutter / Android mobile products with a focus on clarity, performance, and outcomes that actually matter.
+        </p>
+        <div class="hero-actions reveal">
+          <a class="link-btn primary" href="mailto:hello@anassmahmoudi.dev?subject=Project%20inquiry&body=Hi%20Anass%2C%0A%0AI%27d%20like%20to%20discuss%20a%20project.%0A%0AName%3A%0ATimeline%3A%0ABudget%3A%0ADetails%3A">
+            Start a project <span class="arrow">→</span>
+          </a>
+          <a class="link-btn" href="index.html#work">
+            See selected work
+          </a>
+        </div>
       </div>
-      <h1 class="hero-title reveal">
-        Full-stack developer<br>
-        building <em>quiet, thoughtful</em><br>
-        digital products.
-      </h1>
-      <p class="hero-lede reveal">
-        I'm Anass — a developer based in Morocco. I design and ship Laravel web platforms and Flutter / Android mobile products with a focus on clarity, performance, and outcomes that actually matter.
-      </p>
-      <div class="hero-actions reveal">
-        <a class="link-btn primary" href="mailto:hello@anassmahmoudi.dev?subject=Project%20inquiry&body=Hi%20Anass%2C%0A%0AI%27d%20like%20to%20discuss%20a%20project.%0A%0AName%3A%0ATimeline%3A%0ABudget%3A%0ADetails%3A">
-          Start a project <span class="arrow">→</span>
-        </a>
-        <a class="link-btn" href="index.html#work">
-          See selected work
-        </a>
-      </div>
+      <aside class="hero-portrait reveal" aria-hidden="true">
+        <figure>
+          <img src="/assets/12596370_967532649962927_29807497_n_967532649962927.jpg" alt="Anass Mahmoudi">
+          <figcaption>
+            <span class="portrait-name">Anass Mahmoudi</span>
+            <span class="portrait-role">Full-stack developer &middot; Morocco</span>
+          </figcaption>
+        </figure>
+      </aside>
     </section>
 
     <section class="section container" id="work">
