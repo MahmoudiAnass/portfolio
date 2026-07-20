@@ -26,58 +26,66 @@
   <meta name="twitter:image" content="https://anassmahmoudi.dev/images/blog-cover.jpg" />
   <meta name="twitter:creator" content="@AnassMahmoudi_" />
   
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
   <link rel="stylesheet" href="/blogs.css">
 </head>
 <body>
   <header>
-    <div class="nav">
-      <a class="brand" href="index.html#hero" aria-label="Anass Mahmoudi">
-        <img src="/assets/logowhite.png" alt="photo">
-        <div class="name">Anass Mahmoudi</div>
+    <div class="nav container">
+      <a class="brand" href="index.html#top" aria-label="Anass Mahmoudi">
+        <span class="brand-mark">AM</span>
+        <span class="brand-name">Anass Mahmoudi</span>
       </a>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
-        <span></span><span></span><span></span>
+        <span></span><span></span>
       </button>
       <nav aria-label="Primary" id="primaryNav">
         <ul>
-          <li><a href="index.html#hero">Home</a></li>
-          <li><a href="index.html#projects">Projects</a></li>
-          <li><a href="blogs.html">Blogs</a></li>
-          <li><a href="index.html#contact">Contact</a></li>
+          <li><a href="index.html#work">Work</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="blogs.html">Writing</a></li>
+          <li><a href="index.html#contact" class="nav-cta">Contact <span aria-hidden="true">↗</span></a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <div class="container">
-    <h1 style="color:var(--accent);text-align:center">Development Blog & Programming Insights</h1>
-    <p style="text-align:center;color:var(--muted)">Expert articles on Laravel development, Flutter mobile apps, WordPress solutions, web development best practices, and professional programming insights from Morocco.</p>
+  <main class="container">
+    <header class="page-head">
+      <span class="eyebrow"><span class="eyebrow-num">—</span> Writing</span>
+      <h1 class="page-title">Notes on <em>building software</em>.</h1>
+      <p class="page-lede">Occasional essays on Laravel, Flutter, product craft and the messy reality of shipping side projects.</p>
+    </header>
 
-    <div id="postsGrid" class="grid" aria-live="polite"></div>
-  </div>
+    <div id="postsGrid" class="post-list" aria-live="polite"></div>
+  </main>
 
   <script>
-    // load posts.json and render cards
+    function escapeHtml(str){ return String(str||'').replace(/[&<>"']/g, s => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[s])); }
     async function loadPosts(){
+      const grid = document.getElementById('postsGrid');
       try{
         const res = await fetch('posts.json');
         const posts = await res.json();
-        const grid = document.getElementById('postsGrid');
         posts.sort((a,b)=> new Date(b.date) - new Date(a.date));
-        posts.forEach(p=>{
-          const card = document.createElement('article'); card.className = 'card';
-          card.innerHTML = `
-            <img class="thumb" src="${p.image}" alt="${p.title}">
-            <div class="meta">${p.date}</div>
-            <div class="title">${p.title}</div>
-            <div class="excerpt">${p.excerpt}</div>
-            <a class="read" href="blog-post.html?id=${encodeURIComponent(p.id)}">Read More</a>
-          `;
-          grid.appendChild(card);
+        if(!posts.length){ grid.innerHTML = '<p class="empty">No posts yet.</p>'; return; }
+        posts.forEach(p => {
+          const a = document.createElement('a');
+          a.className = 'post-row';
+          a.href = `blog-post.html?id=${encodeURIComponent(p.id)}`;
+          a.innerHTML = `
+            <span class="post-date">${escapeHtml(p.date)}</span>
+            <div class="post-info">
+              <h2 class="post-title">${escapeHtml(p.title)}</h2>
+              <p class="post-excerpt">${escapeHtml(p.excerpt)}</p>
+            </div>
+            <span class="post-arrow" aria-hidden="true">↗</span>`;
+          grid.appendChild(a);
         });
-      }catch(err){ console.error('Failed to load posts', err); document.getElementById('postsGrid').innerText = 'No posts found.' }
+      }catch(err){ console.error('Failed to load posts', err); grid.innerHTML = '<p class="empty">Couldn\'t load posts.</p>'; }
     }
     loadPosts();
   </script>

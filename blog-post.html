@@ -23,39 +23,41 @@
   <meta name="twitter:description" id="twitterDescription" content="Latest insights on web development." />
   <meta name="twitter:creator" content="@AnassMahmoudi_" />
   
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
   <link rel="stylesheet" href="/blogposts.css">
 </head>
 <body>
   <header>
-    <div class="nav">
-      <a class="brand" href="index.html#hero" aria-label="Anass Mahmoudi">
-        <img src="/assets/logowhite.png" alt="photo">
-        <div class="name">Anass Mahmoudi</div>
+    <div class="nav container">
+      <a class="brand" href="index.html#top" aria-label="Anass Mahmoudi">
+        <span class="brand-mark">AM</span>
+        <span class="brand-name">Anass Mahmoudi</span>
       </a>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
-        <span></span><span></span><span></span>
+        <span></span><span></span>
       </button>
       <nav aria-label="Primary" id="primaryNav">
         <ul>
-          <li><a href="index.html#hero">Home</a></li>
-          <li><a href="index.html#projects">Projects</a></li>
-          <li><a href="blogs.html">Blogs</a></li>
-          <li><a href="index.html#contact">Contact</a></li>
+          <li><a href="index.html#work">Work</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="blogs.html">Writing</a></li>
+          <li><a href="index.html#contact" class="nav-cta">Contact <span aria-hidden="true">↗</span></a></li>
         </ul>
       </nav>
     </div>
   </header>
-  <div class="container">
+  <main class="container">
     <article id="post" class="post" aria-live="polite">
-      <a class="back" href="blogs.html">⟵ Back to Blogs</a>
-      <h1 id="postTitle">Loading…</h1>
-      <div class="date" id="postDate"></div>
-      <img id="postImage" class="hero" src="" alt="">
-      <div id="postContent" class="content" style="margin-top:18px"> </div>
+      <a class="back" href="blogs.html"><span aria-hidden="true">←</span> Back to writing</a>
+      <h1 id="postTitle" class="post-heading">Loading…</h1>
+      <div class="post-date-line" id="postDate"></div>
+      <img id="postImage" class="post-hero" src="" alt="">
+      <div id="postContent" class="post-content"> </div>
     </article>
-  </div>
+  </main>
 
   <script>
     function qs(name){ const params = new URLSearchParams(location.search); return params.get(name); }
